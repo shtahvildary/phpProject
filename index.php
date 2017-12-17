@@ -11,7 +11,7 @@
 <script language="javascript" src="jquery.min.js"></script>
 <script language="javascript">
 function send(t){
-	$.post('prj.php',{a:document.getElementById("j1").value,
+	$.post('survey.php',{a:document.getElementById("j1").value,
 		b:document.getElementById("j2").value,
 		c:document.getElementById("j3").value},
 		function(data){
