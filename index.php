@@ -23,15 +23,18 @@ function send(t){
 <form  method="post" id="editorForm" class="pure-form pure-form-stacked">
 
 <div id="question">
-<h1>سوال موردنظر</h1>
+<h1>نظر شما در مورد شیوه نوین آموزش در مدارس چیست؟</h1>
 </div>
 
 <div id="answer">
-<label><input Id="j1" type="radio" name="rb" value="rb1"/>پاسخ 1 </label>
+<label><input Id="j1" type="radio" name="rb" value="rb1"/>عالی</label>
 <br>
-<label><input Id="j2" type="radio" name="rb" value="rb2"/>پاسخ 2</label>
+<label><input Id="j2" type="radio" name="rb" value="rb2"/>خوب</label>
 <br>
-<label><input Id="j3" type="radio" name="rb" value="rb3"/>پاسخ 3 </label>
+<label><input Id="j3" type="radio" name="rb" value="rb3"/>متوسط</label>
+<br>
+<label><input Id="j3" type="radio" name="rb" value="rb3"/>بد</label>
+
 </div>
 
 <div id="check">
