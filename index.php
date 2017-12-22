@@ -1,4 +1,4 @@
 <?php
-require 'main.php';
 include 'survey.php';
+require 'main.php';
 ?>
