@@ -47,23 +47,28 @@ function send(t){
 </div>
 
 <div>
-<button class="pure-button" type="submit" onclick="vote();">ثبت </button>
+<button id="btnSubmit" class="pure-button" type="submit" >ثبت </button>
 </div>
 </form>
 
 </div>
 </div>
-<?php
-function vote2(){
-if (isset($_POST['submit'])) {
-if(isset($_POST['rdbSurvey']))
-{
-echo "You have selected :".$_POST['rdbSurvey'];  //  Displaying Selected Value
-}
-}
-}
-?>
+
+
+<!-- <?php
+// function vote2(){
+// if (isset($_POST['submit'])) {
+// if(isset($_POST['rdbSurvey']))
+// {
+// echo "You have selected :".$_POST['rdbSurvey'];  //  Displaying Selected Value
+// }
+// }
+// }
+?> -->
 </body>
 
 </html>
+
+<script language="javascript" src="./js/functions.js"></script>
+
 
