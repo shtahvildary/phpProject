@@ -1,0 +1,39 @@
+div {
+    /* padding-top: 2px; */
+    /* padding-bottom: 5px; */
+    
+    padding-right: 32px;
+    padding-left: 32px;
+}
+#answer {
+    margin: 1cm 1cm 1cm 1cm;
+}
+.center {
+    position: center;
+    margin: auto;
+    /* width: 50%; */
+    border: 3px solid green;
+    padding: 10px;
+}
+#diagram{
+    padding-top: 2px;
+    
+    /* width: 20%; */
+    margin: 1cm 1cm 1cm 1cm
+}
+
+#diagWell{
+    background-color:DodgerBlue;
+}
+#diagGood{
+    background-color:Tomato;
+
+}
+#diagMid{
+    background-color:rgb(68, 255, 30);
+
+}
+#diagBad{
+    background-color:rgb(255, 30, 188);
+
+}

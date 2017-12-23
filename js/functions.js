@@ -1,10 +1,30 @@
 $("#btnSubmit").click(function(rdbSurvey){
 
     var vote = $('input[type=radio]:checked').val();
+    var voteText="";
     if(vote){
-        // $query = "INSERT INTO `"+$dbName+"`.`"+$tblName+"` (`vote`) VALUES ('"+$users_name+"');";
+        switch(vote){
+            case 1:
+            voteText="بد";
+            break;
+            
+            case 2:
+            voteText="متوسط";
+            break;
+
+            case 3:
+            voteText="خوب";
+            break;
+
+            case 4:
+            voteText="عالی";
+            break;
+        }
+        $query = "INSERT INTO `"+$dbName+"`.`"+$tblName+"` (`vote`) VALUES ('"+$users_name+"');";
         mysql_query($query);
-        alert("Your vote is: "+vote);
+
+        alert("Your vote is: "+voteText);
+        // $("#diagram").hide();
     }else{
         alert("Invalid vote !");
         return false;

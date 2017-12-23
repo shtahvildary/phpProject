@@ -7,3 +7,9 @@ function voteSubmit() {
 	$stmt->execute();
 	return $stmt;
 }
+
+//SELECT * FROM `votes` WHERE 1
+//SELECT `id`, `vote` FROM `votes` WHERE 1
+//INSERT INTO `votes`(`id`, `vote`) VALUES ([value-1],[value-2])
+//UPDATE `votes` SET `id`=[value-1],`vote`=[value-2] WHERE 1
+//DELETE FROM `votes` WHERE 0
