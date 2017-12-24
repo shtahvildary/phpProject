@@ -1,35 +1,52 @@
 <!doctype html>
+
+<?php
+
+$dbhost = 'localhost';
+$dbuser = 'root';
+$dbpass = '';
+$db = 'votingdb';
+
+$dbconn = mysql_connect($dbhost, $dbuser, $dbpass);
+mysql_select_db($db);
+
+
+
+
+if (isset($_POST['#btnSubmit']))
+{
+  $query = "INSERT INTO votes (vote) VALUES ('$_POST[rdbSurvey]')";
+if(mysql_query($query))
+{
+echo "<script>alert('INSERTED SUCCESSFULLY');</script>";
+}
+else
+{
+echo "<script>alert('FAILED TO INSERT');</script>";
+}
+
+}
+?>
+
 <html lang="en" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <title>نظرسنجی</title>
-	<!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous"> -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
 	<link rel="stylesheet" href="./common/myStyle.css"/>
 	<link rel="stylesheet" href="./common/pure.css"/>
 	<link rel="stylesheet" href="./common/styles.css"/>
-    <!-- <script src="../common/jquery.min.js"></script> -->
 
 
-	
 </head>
 <body>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
 <script language="javascript" src="./common/jquery.min.js"></script>
-<!-- <script language="javascript">
-// function send(t){
-// 	$.post('survey.php',{a:document.getElementById("j1").value,
-// 		b:document.getElementById("j2").value,
-// 		c:document.getElementById("j3").value},
-// 		function(data){
-// 		$('#s').html(data);
-// 		});			
-// };
-</script> -->
+
 
 <div>
      <div class="pure-u-5-5">
-    
+
 
 <form  class="pure-form" method="post" id="editorForm" class="pure-form pure-form-stacked">
 
@@ -50,6 +67,13 @@
 
 <div>
 <button id="btnSubmit" class="pure-button center" type="submit" >ثبت </button>
+<!-- $sql = "INSERT INTO votes (vote) VALUES ('$_POST[rdbSurvey]')"; -->
+
+<?php
+// $sql = "INSERT INTO votes (vote) VALUES ('$_POST[rdbSurvey]')";
+
+include 'pdo.php'
+?>
 </div>
 </form>
 
@@ -78,5 +102,3 @@
 </html>
 
 <script language="javascript" src="./js/functions.js"></script>
-
-
