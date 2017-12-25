@@ -10,11 +10,26 @@ require 'config.php';
 	echo $ex->getMessage();
 }
 }
-function select($tblname){
-  $query="SELECT * FROM vote";
-  $statement = $db->prepare($query);
-  $statement->execute(array(10,"%mad%"));
+function select(){
+  require 'config.php';
 
-  $votes = $statement->fetchAll(2);
-  myPrintR($votes);
+  $db = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
+  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  $query="SELECT vote FROM votes";
+  $statement = $db->prepare($query);
+  $statement->execute();
+
+  $votes = $statement->fetchAll();
+  if (count($votes) > 0) {
+    // foreach ($votes as $key) {
+    //   echo $key ;
+    //
+    // }
+      return $votes;
+  }
+  return false;
+
+
+
 }
