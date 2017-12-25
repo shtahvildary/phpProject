@@ -22,11 +22,7 @@ $("#btnSubmit").click(function(rdbSurvey){
         }
         // $query = "INSERT INTO `"+$dbName+"`.`"+$tblName+"` (`vote`) VALUES ('"+$users_name+"');";
         // mysql_query($query);
-<<<<<<< HEAD
         
-=======
-        // $sql = "INSERT INTO votes (vote) VALUES ('$_POST[rdbSurvey]')";
->>>>>>> origin/master
 
         alert("Your vote is: "+voteText);
         // $("#diagram").hide();
