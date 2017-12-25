@@ -7,6 +7,7 @@ require_once 'main.php';
     <meta charset="UTF-8">
     <title>نظرسنجی</title>
 
+<<<<<<< HEAD
 	<link rel="stylesheet" href="./common/myStyle.css"/>
 	<link rel="stylesheet" href="./common/pure.css"/>
 	<link rel="stylesheet" href="./common/styles.css"/>
@@ -70,3 +71,11 @@ require_once 'main.php';
 </html>
 
 <script language="javascript" src="./js/functions.js"></script>
+=======
+require 'main.php';
+// require 'mysql.php';
+
+//require 'pdo.php';
+
+?>
+>>>>>>> origin/master
