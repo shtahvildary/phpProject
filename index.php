@@ -16,7 +16,7 @@ require_once 'main.php';
 <body>
 
 <script language="javascript" src="./common/jquery.min.js"></script>
-
+<?php if (session_start):?>
 <?php if (!isset($_POST['btnSubmit'])):?>
   <?php insert($_POST['rdbSurvey']);?>
   <?php
@@ -82,10 +82,13 @@ require_once 'main.php';
 </div>
 </div>
 </div>
+<?php else:header("Location: login.php");?>
+<?php endif ?>
 <?php endif ?>
 
 </body>
 
 </html>
+
 
 <script language="javascript" src="./js/functions.js"></script>
