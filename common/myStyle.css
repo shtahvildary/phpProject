@@ -37,3 +37,50 @@ div {
     background-color:rgb(255, 30, 188);
 
 }
+
+
+*{
+  margin:0;
+  padding:0;
+  font-family:tahoma;
+  font-size:9pt;
+  direction:rtl;
+}
+#wrapper{
+  margin:10px auto;
+  width:500px;
+  text-align:center;
+}
+h3{
+  color:#c00;
+  text-align:center;
+}
+form{
+  text-align:center;
+  margin:10px auto;
+  padding:10px;
+  border:1px solid #DDD;
+  width:450px;
+}
+label{
+  text-align:left;
+  vertical-align:top;
+}
+input,textarea{
+  border:none;
+  outline:none;
+  padding:5px;
+  border:1px solid #DDD;
+  width:250px;
+}
+textarea{
+  height:150px;
+  width:300px;
+}
+input[type="submit"]{
+  width:150px;
+  border:1px solid #BBB;
+}
+p{
+  margin-bottom:15px;
+}
