@@ -4,7 +4,7 @@ include_once 'actions.php';
 include_once 'functions.php';
 
 ?>
-<!doctype html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -13,32 +13,26 @@ include_once 'functions.php';
 	<link rel="stylesheet" href="./common/myStyle.css"/>
 	<link rel="stylesheet" href="./common/pure.css"/>
 	<link rel="stylesheet" href="./common/styles.css"/>
-
+	<script language="javascript" src="./common/jquery.min.js"></script>
 
 </head>
 <body>
-
-<script language="javascript" src="./common/jquery.min.js"></script>
 <?php
 if (!isLoggedin()):
-  // redirectTo('register.php');
    redirectTo('login.php');
-else:?>
 
-<!-- <?php if (!isset($_POST['btnSubmit'])):?>
-
-  <?php insertVote($_POST['rdbSurvey']);?> -->
+	else:?>
 
 
   <?php
-  $votesCounts=selectVote();
+  //$votesCounts=selectVote();
 
-  $total=array_sum($votesCounts);
+  //$total=array_sum($votesCounts);
 
-  $wellPercent=round(($votesCounts[0]/$total),2)*100;
-   $goodPercent=round(($votesCounts[1]/$total),2)*100;
-   $midPercent=round(($votesCounts[2]/$total),2)*100;
-  $badPercent=round(($votesCounts[3]/$total),2)*100;
+  //$wellPercent=round(($votesCounts[0]/$total),2)*100;
+   //$goodPercent=round(($votesCounts[1]/$total),2)*100;
+   //$midPercent=round(($votesCounts[2]/$total),2)*100;
+  //$badPercent=round(($votesCounts[3]/$total),2)*100;
 
   ?>
 
@@ -46,7 +40,7 @@ else:?>
      <div class="pure-u-5-5">
 
 
-<form  class="pure-form" method="post" id="votingForm" class="pure-form pure-form-stacked">
+<form  class="pure-form" method="post" id="editorForm" class="pure-form pure-form-stacked">
 
 <div id="question">
 <p>نظر شما در مورد شیوه نوین آموزش در مدارس چیست؟</p>
@@ -75,27 +69,22 @@ else:?>
 <div  class="pure-g"><br>
 
   <!-- <div id="diagWell" class="pure-u-3-24" style="width=10%"><p>عالی</p></div> -->
-	<div id="diagWell" class="pure-u-24-24" style="width:<?php echo $GLOBALS['wellPercent']; ?>%;"><p><?php echo "عالی:".$wellPercent."%" ?></p></div>
+	<div id="diagWell" class="pure-u-24-24" style="width:<?php //echo $GLOBALS['wellPercent']; ?>%;"><p><?php //echo "عالی:".$wellPercent."%" ?></p></div>
 </div>
 <div  class="pure-g">
-	<div id="diagGood" class="pure-u-24-24" style="width:<?php echo $goodPercent; ?>%;"><p><?php echo "خوب:".$goodPercent."%" ?></p></div>
+	<div id="diagGood" class="pure-u-24-24" style="width:<?php //echo $goodPercent; ?>%;"><p><?php //echo "خوب:".$goodPercent."%" ?></p></div>
 </div>
 <div  class="pure-g">
-	<div id="diagMid" class="pure-u-24-24" style="width:<?php echo $midPercent; ?>%;"><p><?php echo "متوسط:".$midPercent."%" ?></p></div>
+	<div id="diagMid" class="pure-u-24-24" style="width:<?php// echo $midPercent; ?>%;"><p><?php //echo "متوسط:".$midPercent."%" ?></p></div>
 </div>
 <div  class="pure-g">
-	<div id="diagBad"class="pure-u-24-24" style="width:<?php echo $badPercent; ?>%;"><p><?php echo "بد:".$badPercent."%" ?></p></div>
+	<div id="diagBad"class="pure-u-24-24" style="width:<?php //echo $badPercent; ?>%;"><p><?php //echo "بد:".$badPercent."%" ?></p></div>
 </div>
 </div>
 </div>
-<!-- <?php
-// else:header("Location: login.php");?>
 <?php endif ?>
-<?php endif ?> -->
-<
 
 </body>
-
 </html>
 
 

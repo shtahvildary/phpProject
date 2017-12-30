@@ -1,5 +1,5 @@
 <?php
-// session_start();
+ //session_start();
 include_once 'pdo.php';
 function redirectTo($addr)
 {

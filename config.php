@@ -1,8 +1,12 @@
 <?php
-$dbHost="localhost";
-$dbUser="root";
-$dbPass="";
-$dbName="votingdb";
+global $dbHost;
+global $dbUser;
+global $dbPass;
+global $dbName;
+ $dbHost="localhost";
+ $dbUser="root";
+ $dbPass="";
+ $dbName="votingdb";
 
 // $GLOBALS['wellPercent']=0;
 //  $GLOBALS['goodPercent']=0;

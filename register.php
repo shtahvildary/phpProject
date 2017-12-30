@@ -19,8 +19,7 @@ require_once 'main.php';
 <form class="pure-form" action="" method="post">
     <fieldset>
       <legend>برای ثبت نام، نام کاربری و کلمه عبور دلخواه خود را وارد کنید:</legend>
-        <!-- <legend>برای ورود کلمه نام کاربری و کلمه عبور خود را وارد کنید.</legend> -->
-
+        
         <input name-"username" type="text" placeholder="نام کاربری">
         <input name="password" type="password" placeholder="کلمه عبور">
 

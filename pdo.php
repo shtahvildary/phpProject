@@ -1,7 +1,11 @@
 <?php
+
 function dbConnection(){
   require 'config.php';
-
+    global $dbHost;
+    global $dbUser;
+    global $dbPass;
+    global $dbName;
   $db = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   return $db;
@@ -62,11 +66,12 @@ function selectVote(){
 function insertUser($username,$password){
   $db=dbConnection();
   // $statement=$db->prepare("INSERT INTO users(username,password) VALUE ('ali','123')");
-  $statement=$db->prepare("INSERT INTO users(username,password) VALUE (':username',':password')");
+  // $statement=$db->prepare("INSERT INTO users(username,password) VALUE (':username',':password')");
+  $statement=$db->prepare("INSERT INTO users(username,password) VALUE (?,?)");
 
-   $stmt->bindParam(':username', $username);
-   $stmt->bindParam(':password', $password);
-   $statement->execute();
+    // $statement->bindParam(':username', $username);
+    // $statement->bindParam(':password', $password);
+   $statement->execute(array($username,$password));
 
 
 
@@ -74,16 +79,17 @@ function insertUser($username,$password){
 
 function selectUser($username,$password){
   $db=dbConnection();
-  // $statement=$db->prepare("SELECT username FROM users WHERE username='ali' and password='123'");
-  $statement=$db->prepare("SELECT username FROM users WHERE username=':username' and password=':password'");
+   $statement=$db->prepare("SELECT username FROM users WHERE username=? and password=?");
+//  $statement=$db->prepare("SELECT username FROM users WHERE username=':username' and password=':password'");
 
-  $stmt->bindParam(':username', $username);
-  $stmt->bindParam(':password', $password);
+   // $statement->bindParam(':username', $username);
+    //$statement->bindParam(':password', $password);
 
-  $statement->execute();
+  $statement->execute(array($username,$password));
   $user = $statement->fetchAll(2);
   if($user){
     return $user;
+    //redirectTo('index.php');
   }
   return false;
 }
