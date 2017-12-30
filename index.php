@@ -1,7 +1,9 @@
 <?php
 require_once 'main.php';
-include_once 'actions.php';
+include 'actions.php';
 include_once 'functions.php';
+include_once 'pdo.php';
+
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -25,14 +27,21 @@ if (!isLoggedin()):
 
 
   <?php
-  //$votesCounts=selectVote();
+  if (isset($_POST['btnSubmit'])) {
+    // redirectTo('register.php');
 
-  //$total=array_sum($votesCounts);
+    insertVote($_POST['rdbSurvey']);
+   // redirectTo('index.php');
 
-  //$wellPercent=round(($votesCounts[0]/$total),2)*100;
-   //$goodPercent=round(($votesCounts[1]/$total),2)*100;
-   //$midPercent=round(($votesCounts[2]/$total),2)*100;
-  //$badPercent=round(($votesCounts[3]/$total),2)*100;
+  }
+  $votesCounts=selectVote();
+
+  $total=array_sum($votesCounts);
+
+  $wellPercent=round(($votesCounts[0]/$total),2)*100;
+   $goodPercent=round(($votesCounts[1]/$total),2)*100;
+   $midPercent=round(($votesCounts[2]/$total),2)*100;
+  $badPercent=round(($votesCounts[3]/$total),2)*100;
 
   ?>
 
@@ -40,7 +49,7 @@ if (!isLoggedin()):
      <div class="pure-u-5-5">
 
 
-<form  class="pure-form" method="post" id="editorForm" class="pure-form pure-form-stacked">
+<form  class="pure-form" method="post" action="" id="editorForm" class="pure-form pure-form-stacked">
 
 <div id="question">
 <p>نظر شما در مورد شیوه نوین آموزش در مدارس چیست؟</p>
@@ -69,16 +78,16 @@ if (!isLoggedin()):
 <div  class="pure-g"><br>
 
   <!-- <div id="diagWell" class="pure-u-3-24" style="width=10%"><p>عالی</p></div> -->
-	<div id="diagWell" class="pure-u-24-24" style="width:<?php //echo $GLOBALS['wellPercent']; ?>%;"><p><?php //echo "عالی:".$wellPercent."%" ?></p></div>
+	<div id="diagWell" class="pure-u-24-24" style="width:<?php echo $GLOBALS['wellPercent']; ?>%;"><p><?php echo "عالی:".$wellPercent."%" ?></p></div>
 </div>
 <div  class="pure-g">
-	<div id="diagGood" class="pure-u-24-24" style="width:<?php //echo $goodPercent; ?>%;"><p><?php //echo "خوب:".$goodPercent."%" ?></p></div>
+	<div id="diagGood" class="pure-u-24-24" style="width:<?php echo $goodPercent; ?>%;"><p><?php echo "خوب:".$goodPercent."%" ?></p></div>
 </div>
 <div  class="pure-g">
-	<div id="diagMid" class="pure-u-24-24" style="width:<?php// echo $midPercent; ?>%;"><p><?php //echo "متوسط:".$midPercent."%" ?></p></div>
+	<div id="diagMid" class="pure-u-24-24" style="width:<?php echo $midPercent; ?>%;"><p><?php echo "متوسط:".$midPercent."%" ?></p></div>
 </div>
 <div  class="pure-g">
-	<div id="diagBad"class="pure-u-24-24" style="width:<?php //echo $badPercent; ?>%;"><p><?php //echo "بد:".$badPercent."%" ?></p></div>
+	<div id="diagBad"class="pure-u-24-24" style="width:<?php echo $badPercent; ?>%;"><p><?php echo "بد:".$badPercent."%" ?></p></div>
 </div>
 </div>
 </div>

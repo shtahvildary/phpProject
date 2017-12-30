@@ -1,5 +1,7 @@
 <?php
 require_once 'main.php';
+include_once 'actions.php';
+include_once 'functions.php';
 
 ?>
 <!doctype html>
@@ -12,14 +14,15 @@ require_once 'main.php';
 	<link rel="stylesheet" href="./common/myStyle.css"/>
 	<link rel="stylesheet" href="./common/pure.css"/>
 	<link rel="stylesheet" href="./common/styles.css"/>
+  <script language="javascript" src="./common/jquery.min.js"></script>
 
 
 
 
-<form class="pure-form" action="" method="post">
+<form class="pure-form" action="index.php" method="post">
     <fieldset>
       <legend>برای ثبت نام، نام کاربری و کلمه عبور دلخواه خود را وارد کنید:</legend>
-        
+
         <input name-"username" type="text" placeholder="نام کاربری">
         <input name="password" type="password" placeholder="کلمه عبور">
 

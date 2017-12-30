@@ -14,7 +14,7 @@ function dbConnection(){
 function insertVote($value){
   try {
     $db=dbConnection();
-	$statement = $db->prepare("INSERT INTO votes(vote) VALUE ( ?)");
+	$statement = $db->prepare("INSERT INTO votes(vote) VALUE (?)");
 
 	$statement ->execute(array($value));
 	} catch ( PDOException $ex ) {
@@ -67,7 +67,7 @@ function insertUser($username,$password){
   $db=dbConnection();
   // $statement=$db->prepare("INSERT INTO users(username,password) VALUE ('ali','123')");
   // $statement=$db->prepare("INSERT INTO users(username,password) VALUE (':username',':password')");
-  $statement=$db->prepare("INSERT INTO users(username,password) VALUE (?,?)");
+  $statement=$db->prepare("INSERT INTO users(username,password) VALUES (?,?)");
 
     // $statement->bindParam(':username', $username);
     // $statement->bindParam(':password', $password);
