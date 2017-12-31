@@ -1,12 +1,16 @@
 div {
-    /* padding-top: 2px; */
+    padding-top: 2px; 
     /* padding-bottom: 5px; */
 
     padding-right: 32px;
     padding-left: 32px;
+    direction: rtl;
 }
+
 #answer {
     margin: 1cm 1cm 1cm 1cm;
+    /*direction: rtl;
+    position: absolute;*/
 }
 .center {
     position: center;
@@ -43,7 +47,7 @@ div {
   margin:0;
   padding:0;
   font-family:tahoma;
-  font-size:9pt;
+  font-size:12pt;
   direction:rtl;
 }
 #wrapper{

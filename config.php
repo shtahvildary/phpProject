@@ -8,6 +8,9 @@ global $dbName;
  $dbPass="";
  $dbName="votingdb";
 
+ global $name;
+ // $name="";
+
 // $GLOBALS['wellPercent']=0;
 //  $GLOBALS['goodPercent']=0;
 // $GLOBALS['midPercent']=0;

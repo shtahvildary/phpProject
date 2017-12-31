@@ -11,13 +11,13 @@ include_once 'pdo.php';
 // $successMsg = false; // success message
 
 
-// if (isset($_POST['btnSubmit'])) {
-//   // redirectTo('register.php');
-//
-//   insertVote($_POST['rdbSurvey']);
-//  // redirectTo('index.php');
-//
-// }
+if (isset($_POST['btnSubmit'])) {
+  // redirectTo('register.php');
+
+  insertVote($_POST['rdbSurvey']);
+  redirectTo('index.php');
+
+}
 
 
 if (isset($_POST['btnLogin'])) {
@@ -27,6 +27,7 @@ if (isset($_POST['btnLogin'])) {
             redirectTo('index.php');
         } else {
          $errorMsg = 'نام کاربری یا رمز وارد شده اشتباه است .';
+           echo "<div class='error'>" . nl2br($errorMsg) . "</div>";
          redirectTo('register.php');
      }
 }
@@ -38,10 +39,19 @@ else{
   // redirectTo('index.php');
 
   $errorMsg="خطایی رخ داده است، لطفا دوباره تلاش کنید.";
+    echo "<div class='error'>" . nl2br($errorMsg) . "</div>";
 }
 }
 
 
-if (isset($_GET['logout'])) {
-    logout();
+if (isset($_POST['btnLogout'])) {
+    $isloggedOut=logout();
+    if($isloggedOut){
+      redirectTo('login.php');
+    }
+    else{
+      $errorMsg="خطایی رخ داده است، لطفا دوباره تلاش کنید.";
+        echo "<div class='error'>" . nl2br($errorMsg) . "</div>";
+// <script>alert($errorMsg);</script>
+    }
 }

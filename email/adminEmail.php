@@ -2,7 +2,13 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>JS Bin</title>
+  <title>ایمیل</title>
+
+  <link rel="stylesheet" href="../common/myStyle.css"/>
+  <link rel="stylesheet" href="../common/pure.css"/>
+  <link rel="stylesheet" href="../common/styles.css"/>
+  <script language="javascript" src="../common/jquery.min.js"></script>
+
 </head>
 <body style="background-color: #EEE;width:100%;height:100%">
     <div style="font-family: tahoma;font-size: 100%;direction: rtl;border:1px solid #CCC;width:500px; margin:50px auto;background-color: #FFF;border-radius: 3px;

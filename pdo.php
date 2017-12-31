@@ -64,6 +64,7 @@ function selectVote(){
 
 
 function insertUser($username,$password){
+try {
   $db=dbConnection();
   // $statement=$db->prepare("INSERT INTO users(username,password) VALUE ('ali','123')");
   // $statement=$db->prepare("INSERT INTO users(username,password) VALUE (':username',':password')");
@@ -73,9 +74,16 @@ function insertUser($username,$password){
     // $statement->bindParam(':password', $password);
    $statement->execute(array($username,$password));
 
+    return true;
+  } catch ( PDOException $ex ) {
+  echo $ex->getMessage();
+  return false;
+ }
+ }
 
 
-}
+
+
 
 function selectUser($username,$password){
   $db=dbConnection();

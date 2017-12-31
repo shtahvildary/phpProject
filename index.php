@@ -3,13 +3,16 @@ require_once 'main.php';
 include 'actions.php';
 include_once 'functions.php';
 include_once 'pdo.php';
+// global $name;
 
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en" dir="rtl">
 <head>
-    <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+
+    <!-- <meta charset="UTF-8"> -->
     <title>نظرسنجی</title>
 
 	<link rel="stylesheet" href="./common/myStyle.css"/>
@@ -27,13 +30,7 @@ if (!isLoggedin()):
 
 
   <?php
-  if (isset($_POST['btnSubmit'])) {
-    // redirectTo('register.php');
 
-    insertVote($_POST['rdbSurvey']);
-   // redirectTo('index.php');
-
-  }
   $votesCounts=selectVote();
 
   $total=array_sum($votesCounts);
@@ -44,12 +41,21 @@ if (!isLoggedin()):
   $badPercent=round(($votesCounts[3]/$total),2)*100;
 
   ?>
+  <form class="pure-form" action="actions.php" method="post" id="barForm" >
 
+  <div class="info">
+
+            <span class="adminName"><?php echo "خوش آمدی  ".$name; ?></span>
+            <button name="btnLogout" class="pure-button center" type="submit" >خروج </button>
+            <!-- <a class="logout" href="<?php echo QA_HOME_URL . '?logout=1'; ?>">خروج</a> -->
+        </div>
+      </form>
 <div>
      <div class="pure-u-5-5">
 
+<form class="pure-form" action="actions.php" method="post" id="votingForm">
+<!-- <form  class="pure-form" method="post" action=""  class="pure-form pure-form-stacked"> -->
 
-<form  class="pure-form" method="post" action="" id="editorForm" class="pure-form pure-form-stacked">
 
 <div id="question">
 <p>نظر شما در مورد شیوه نوین آموزش در مدارس چیست؟</p>
@@ -67,7 +73,7 @@ if (!isLoggedin()):
 </div>
 
 <div>
-<button id="btnSubmit" class="pure-button center" type="submit" >ثبت </button>
+<button name="btnSubmit" class="pure-button center" type="submit" >ثبت </button>
 </div>
 </form>
 </div>
@@ -78,7 +84,7 @@ if (!isLoggedin()):
 <div  class="pure-g"><br>
 
   <!-- <div id="diagWell" class="pure-u-3-24" style="width=10%"><p>عالی</p></div> -->
-	<div id="diagWell" class="pure-u-24-24" style="width:<?php echo $GLOBALS['wellPercent']; ?>%;"><p><?php echo "عالی:".$wellPercent."%" ?></p></div>
+	<div id="diagWell" class="pure-u-24-24" style="width:<?php echo $wellPercent; ?>%;"><p><?php echo "عالی:".$wellPercent."%" ?></p></div>
 </div>
 <div  class="pure-g">
 	<div id="diagGood" class="pure-u-24-24" style="width:<?php echo $goodPercent; ?>%;"><p><?php echo "خوب:".$goodPercent."%" ?></p></div>

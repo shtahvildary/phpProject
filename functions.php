@@ -1,6 +1,8 @@
 <?php
  //session_start();
 include_once 'pdo.php';
+global $name;
+
 function redirectTo($addr)
 {
     header("Location: $addr");
@@ -12,6 +14,7 @@ $user=selectUser($username,$password);
         $_SESSION['login'] = true;
         $_SESSION['user'] = $user['username'];
         $_SESSION['userIP'] = $_SERVER['REMOTE_ADDR'];
+        $name=$username;
         return true;
     }
     return false;
@@ -20,12 +23,14 @@ $user=selectUser($username,$password);
 }
 
 function register($username,$password){
-  insertUser($username,$password);
+  $user=insertUser($username,$password);
   if ($user) {
     // if ($username == QA_ADMIN_USERNAME && $password == QA_ADMIN_PASSWORD) {
         $_SESSION['login'] = true;
         $_SESSION['user'] = $user['username'];
         $_SESSION['userIP'] = $_SERVER['REMOTE_ADDR'];
+        $name=$username;
+
         return true;
     }
     return false;
