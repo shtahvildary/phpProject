@@ -3,16 +3,14 @@ require_once 'main.php';
 include 'actions.php';
 include_once 'functions.php';
 include_once 'pdo.php';
-// global $name;
-
-
+include_once 'config.php';
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en" dir="rtl">
 <head>
   <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
 
-    <!-- <meta charset="UTF-8"> -->
+
     <title>نظرسنجی</title>
 
 	<link rel="stylesheet" href="./common/myStyle.css"/>
@@ -45,23 +43,23 @@ if (!isLoggedin()):
 
   <div class="info">
 
-            <span class="adminName"><?php echo "خوش آمدی  ".$name; ?></span>
+            <span class="adminName" dir="rtl"><?php echo $_SESSION['user']. " عزیز، خوش آمدی  "; ?></span>
             <button name="btnLogout" class="pure-button center" type="submit" >خروج </button>
-            <!-- <a class="logout" href="<?php echo QA_HOME_URL . '?logout=1'; ?>">خروج</a> -->
+
         </div>
       </form>
 <div>
      <div class="pure-u-5-5">
 
 <form class="pure-form" action="actions.php" method="post" id="votingForm">
-<!-- <form  class="pure-form" method="post" action=""  class="pure-form pure-form-stacked"> -->
+
 
 
 <div id="question">
 <p>نظر شما در مورد شیوه نوین آموزش در مدارس چیست؟</p>
 </div>
 
-<div id="answer">
+<div id="answer" >
 <label class="pure-radio"><input id="well" type="radio" name="rdbSurvey" value="4" checked/>عالی</label>
 <br>
 <label class="pure-radio"><input id="good" type="radio" name="rdbSurvey" value="3"/>خوب</label>
@@ -83,7 +81,7 @@ if (!isLoggedin()):
 <div  id="diagram" >
 <div  class="pure-g"><br>
 
-  <!-- <div id="diagWell" class="pure-u-3-24" style="width=10%"><p>عالی</p></div> -->
+
 	<div id="diagWell" class="pure-u-24-24" style="width:<?php echo $wellPercent; ?>%;"><p><?php echo "عالی:".$wellPercent."%" ?></p></div>
 </div>
 <div  class="pure-g">
