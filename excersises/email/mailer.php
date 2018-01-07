@@ -9,7 +9,7 @@ $html=  str_replace('{name}',$name, $html);
 $html=  str_replace('{email}',$email, $html);
 $html=  str_replace('{subject}',$subject, $html);
 $html=  str_replace('{content}',$content,$html);
-$headers  = 'From: shadab_tahvildary@irib.ir'. "\r\n" .
+$headers  = 'From: test@irib.ir'. "\r\n" .
 	'MIME-Version: 1.0' . "\r\n" .
 		'Content-type: text/html; charset=utf-8' . "\r\n" .
 	'X-Mailer: PHP/' . phpversion();
@@ -18,7 +18,7 @@ $headers  = 'From: shadab_tahvildary@irib.ir'. "\r\n" .
 	ini_set("smtp_port","465");
 
 
- return mail("shtahvildary@gmail.com","درخواست جدید در وب سایت", $html, $headers);
+ return mail("shadab_tahvildary@irib.ir","درخواست جدید در وب سایت", $html, $headers);
 }
 
 if(isset($_POST['btnSendMail']))

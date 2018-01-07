@@ -16,8 +16,7 @@ if (isset($_POST['btnSubmit'])) {
 if (isset($_POST['btnLogin'])) {
     echo('btnLogin is pressed!!!!!');
      if(  login($_POST['username'], $_POST['password'])){
-       //  $_SESSION['login']=true;
-			//var_dump( $_SESSION);
+     
             redirectTo('index.php');
         } else {
          $errorMsg = 'نام کاربری یا رمز وارد شده اشتباه است .';
@@ -30,7 +29,7 @@ if (isset($_POST['btnRegister'])) {
   redirectTo('index.php');
 }
 else{
-  // redirectTo('index.php');
+  
 
   $errorMsg="خطایی رخ داده است، لطفا دوباره تلاش کنید.";
     echo "<div class='error'>" . nl2br($errorMsg) . "</div>";
